@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Em breve Mercado Satoshi</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        #header {
+            text-align: center;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        #footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .icons {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+        .icons li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+        .copyright {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="background"></canvas>
+    <header id="header">
+        <h1>EM BREVE</h1>
+        <p>Mercado Satoshi voltará em breve pra te ajudar a encontrar onde comprar Bitcoin mais Barato.</p>
+    </header>
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon-twitter">T</a></li>
+            <li><a href="#" class="icon-github">G</a></li>
+            <li><a href="#" class="icon-envelope">E</a></li>
+        </ul>
+        <div class="copyright">&copy; Mercado Satoshi</div>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('background');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function drawGradient(time) {
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, `hsl(30, 100%, ${20 + 10 * Math.sin(time / 1000)}%)`);
+            gradient.addColorStop(1, `hsl(30, 100%, ${40 + 10 * Math.sin(time / 1000 + Math.PI)}%)`);
+
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function animate(time) {
+            drawGradient(time);
+            requestAnimationFrame(animate);
+        }
+
+        animate(0);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
