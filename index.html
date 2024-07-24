@@ -35,24 +35,24 @@
             margin-bottom: 30px;
         }
         .logo {
-            width: 200px; /* Aumentado o tamanho */
+            width: 200px;
             height: auto;
-            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); /* Adicionado sombra */
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
         }
         h1 {
-            font-size: 3.5em; /* Aumentado o tamanho da fonte */
+            font-size: 3.5em;
             margin: 20px 0;
             font-family: 'Ubuntu', sans-serif;
             font-weight: 700;
-            letter-spacing: 2px; /* Espaçamento entre letras */
-            text-transform: uppercase; /* Todas maiúsculas */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra no texto */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         p {
             font-size: 1.2em;
             max-width: 100%;
             margin: 0 auto;
-            line-height: 1.6; /* Melhor espaçamento entre linhas */
+            line-height: 1.6;
         }
         #footer {
             position: absolute;
@@ -83,7 +83,7 @@
     <canvas id="background"></canvas>
     <header id="header">
         <div class="logo-container">
-            <img src="https://github.com/lnrdleao/mercadosatoshi/blob/main/Logo%20Sem%20Fundo%20com%20Borda%20Grossa.png"alt="Logo Mercado Satoshi" class="logo">
+            <img src="https://raw.githubusercontent.com/lnrdleao/mercadosatoshi/main/Logo%20Sem%20Fundo%20com%20Borda%20Grossa.png" alt="Logo Mercado Satoshi" class="logo">
         </div>
         <h1>Mercado Satoshi</h1>
         <p>voltará em breve pra te ajudar a encontrar onde comprar Bitcoin mais Barato.</p>
@@ -95,7 +95,6 @@
         <div class="copyright">&copy; Mercado Satoshi</div>
     </footer>
     <script>
-        // O script JavaScript permanece o mesmo
         const canvas = document.getElementById('background');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
