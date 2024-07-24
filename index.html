@@ -4,6 +4,8 @@
     <title>Em breve Mercado Satoshi</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- Importando a fonte Ubuntu do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
     <style>
         body, html {
             height: 100%;
@@ -32,6 +34,8 @@
         h1 {
             font-size: 3em;
             margin-bottom: 20px;
+            font-family: 'Ubuntu', sans-serif; /* Aplicando a fonte Ubuntu ao h1 */
+            font-weight: 700; /* Peso da fonte para torná-la mais forte */
         }
         p {
             font-size: 1.2em;
@@ -75,30 +79,23 @@
         </ul>
         <div class="copyright">&copy; Mercado Satoshi</div>
     </footer>
-
     <script>
         const canvas = document.getElementById('background');
         const ctx = canvas.getContext('2d');
-
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-
         function drawGradient(time) {
             const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
             gradient.addColorStop(0, `hsl(30, 100%, ${20 + 10 * Math.sin(time / 1000)}%)`);
             gradient.addColorStop(1, `hsl(30, 100%, ${40 + 10 * Math.sin(time / 1000 + Math.PI)}%)`);
-
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
-
         function animate(time) {
             drawGradient(time);
             requestAnimationFrame(animate);
         }
-
         animate(0);
-
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
