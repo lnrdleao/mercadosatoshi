@@ -73,6 +73,13 @@
             color: white;
             text-decoration: none;
             font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icons svg {
+            width: 24px;
+            height: 24px;
         }
         .copyright {
             font-size: 0.9em;
@@ -83,14 +90,20 @@
     <canvas id="background"></canvas>
     <header id="header">
         <div class="logo-container">
-            <img src="https://github.com/lnrdleao/mercadosatoshi/blob/main/Logo%20Sem%20Fundo%20com%20Borda%20Grossa.png?raw=true" alt="Logo Mercado Satoshi" class="logo">
+            <img src="https://raw.githubusercontent.com/lnrdleao/mercadosatoshi/main/Logo%20Sem%20Fundo%20com%20Borda%20Grossa.png" alt="Logo Mercado Satoshi" class="logo">
         </div>
         <h1>Mercado Satoshi</h1>
         <p>voltará em breve pra te ajudar a encontrar onde comprar Bitcoin mais Barato.</p>
     </header>
     <footer id="footer">
         <ul class="icons">
-            <li><a href="#" class="icon-twitter">T</a></li>
+            <li>
+                <a href="#" class="icon-x">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </a>
+            </li>
         </ul>
         <div class="copyright">&copy; Mercado Satoshi</div>
     </footer>
